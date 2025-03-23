@@ -22,14 +22,23 @@ const ServiceDetailPage = ({ params }) => {
     console.log('id paisi', id);
 
     const singleData = data.find((d) => d.id == id);
-    return (
-        <div>
-            <h1>ServiceDetailPage</h1>
-            <p>ID: {id}</p>
-            <p>{singleData?.serviceName}</p>
-            <img className='size-40' src={singleData?.image} />
-        </div>
-    );
+    if (singleData) {
+        return (
+            <div>
+                <h1>ServiceDetailPage</h1>
+                <p>ID: {id}</p>
+                <p>{singleData?.serviceName}</p>
+                <img className='size-40' src={singleData?.image} />
+            </div>
+        );
+    } else {
+        return (
+            <>
+                <p>Not Found Service</p>
+            </>
+        )
+    }
+
 };
 
 export default ServiceDetailPage;
