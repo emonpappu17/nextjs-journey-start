@@ -13,6 +13,7 @@ const NavBar = () => {
                     <Link href={'/posts'}><li>posts</li></Link>
                     {/* <Link href={'/services'}><li>Services</li></Link> */}
                     <Link href={'/about'}><li>About</li></Link>
+                    <Link href={'/meals'}><li>Meals</li></Link>
 
                     {/* <li>
                     Services

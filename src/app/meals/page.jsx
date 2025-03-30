@@ -1,7 +1,20 @@
 // "use client"
 // import React, { useEffect, useState } from 'react';
 
+import Link from "next/link";
 import MealSearchNewInput from "./components/MealSearchNewInput";
+import Image from "next/image";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+    weight: ["400", "600", "700"],
+    subsets: ["latin"],
+})
+
+export const metadata = {
+    title: "All Meals",
+    description: "Meals loaded form MealDB API",
+};
 
 const MealsPage = async ({ searchParams }) => {
     // const [meals, setMeals] = useState([]);
@@ -40,10 +53,16 @@ const MealsPage = async ({ searchParams }) => {
             <div className='grid grid-cols-4 gap-4'>
                 {meals?.map((singleMeal) => {
                     return (
-                        <div key={singleMeal?.idMeal}>
+                        <div key={singleMeal?.idMeal} className={`${roboto.className}`}>
+
+                            <Image src={singleMeal.strMealThumb} alt={singleMeal?.strMeal} width={641} height={641} />
+
+                            {/* <img src={singleMeal.strMealThumb} alt={singleMeal?.strMeal} /> */}
+
                             <p className='text-3xl font-bold'>{singleMeal?.strMeal}</p>
                             <p>{singleMeal?.strInstructions
                             }</p>
+                            <Link href={`/meals/${singleMeal.idMeal}`}>Details</Link>
                         </div>
                     )
                 })}

@@ -6,7 +6,7 @@ export const getSinglePost = async (post_id) => {
     return data
 }
 
-export async function generateMetadata({ params, }) {
+export async function generateMetadata({ params }) {
     // read route params
     const { id } = await params
 
@@ -21,12 +21,10 @@ export async function generateMetadata({ params, }) {
 
 const SinglePost = async ({ params }) => {
     const p = await params
-    // console.log(p.id);
     const singlePost = await getSinglePost(p.id)
 
     return (
         <div>
-            {/* <h1>i am SinglePost {p.id}</h1> */}
             <p>
                 singlePost{JSON.stringify(singlePost)}
             </p>

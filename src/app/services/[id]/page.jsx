@@ -19,7 +19,6 @@ const ServiceDetailPage = ({ params }) => {
         }
     ]
     const id = params?.id;
-    console.log('id paisi', id);
 
     const singleData = data.find((d) => d.id == id);
     if (singleData) {
