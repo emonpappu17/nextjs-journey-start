@@ -11,9 +11,8 @@ const dbConnect =async (collectionName) => {
     });
     // await client.connect();
     // await client.connect().db("admin").command({ ping: 1 });
-    // return client.db('emaJohnDB').collection(collectionName)
-
-
+    // return
+    
     // return client.db(process.env.DB_NAME)
     return client.db(process.env.DB_NAME).collection(collectionName)
 }
