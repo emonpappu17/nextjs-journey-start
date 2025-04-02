@@ -15,6 +15,7 @@ export async function GET() {
 
     console.log('WORKING', data);
 
+    // return data
     return Response.json(data)
 }
 

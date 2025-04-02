@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 const NavBar = () => {
     const pathName = usePathname();
-    console.log(pathName, pathName.includes('dashboard'));
+    // console.log(pathName, pathName.includes('dashboard'));
     if (!pathName.includes('dashboard')) {
         return (
             <nav className="flex justify-center">

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutSlugPages = async ({ params }) => {
     const p = await params;
-    console.log(p);
+    // console.log(p);
 
     return (
         <div>
